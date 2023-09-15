@@ -5,15 +5,15 @@ const SingleItem = ({ item, removeItems, editItems }) => {
   console.log(typeof completed);
   return (
     <div className="single-item">
-      <input
-        id="checkbox"
-        type="checkbox"
-        checked={item.completed}
-        onChange={() => {
-          editItems(id);
-        }}
-      />
       <label style={completed ? { textDecoration: 'line-through' } : {}}>
+        <input
+          id="checkbox"
+          type="checkbox"
+          checked={item.completed}
+          onChange={() => {
+            editItems(id);
+          }}
+        />
         {name}
       </label>
       <button

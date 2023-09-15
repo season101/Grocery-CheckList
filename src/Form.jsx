@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
 const Form = ({ addItems }) => {
   const [newItem, setNewItem] = useState('');
@@ -6,7 +7,7 @@ const Form = ({ addItems }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!newItem) {
-      console.log('Empty Value');
+      toast.warning('please enter a value');
       return;
     }
 

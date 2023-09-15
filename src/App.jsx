@@ -15,10 +15,10 @@ const App = () => {
   };
 
   return (
-    <>
+    <section className="section-center">
       <Form addItems={addItems} />
       <Items items={items} />
-    </>
+    </section>
   );
 };
 

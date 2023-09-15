@@ -16,12 +16,18 @@ const Form = ({ addItems }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        onChange={(e) => setNewItem(e.target.value)}
-        value={newItem}
-      />
-      <button type="submit">Add Item</button>
+      <h4>Grocery Checklist</h4>
+      <div className="form-control">
+        <input
+          className="form-input"
+          type="text"
+          onChange={(e) => setNewItem(e.target.value)}
+          value={newItem}
+        />
+        <button className="btn" type="submit">
+          Add Item
+        </button>
+      </div>
     </form>
   );
 };

@@ -29,6 +29,18 @@ const App = () => {
     setItems(newItems);
     toast.success('Item Deleted.');
   };
+  const editItems = (id) => {
+    const newItems = items.map((item) => {
+      if (item.id === id) {
+        const newItem = { ...item, completed: !item.completed };
+        return newItem;
+      }
+      return item;
+    });
+    console.log(newItems);
+    setItems(newItems);
+    localStorage.setItem('itemsStorage', JSON.stringify(newItems));
+  };
 
   return (
     <section className="section-center">
@@ -38,7 +50,7 @@ const App = () => {
         hideProgressBar={true}
       />
       <Form addItems={addItems} />
-      <Items items={items} removeItems={removeItems} />
+      <Items items={items} removeItems={removeItems} editItems={editItems} />
     </section>
   );
 };

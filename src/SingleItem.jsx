@@ -6,13 +6,19 @@ const SingleItem = ({ item, removeItems }) => {
   return (
     <div className="single-item">
       <input
+        id="checkbox"
         type="checkbox"
         completed={isChecked.toString()}
         onChange={() => {
           setIsChecked(!isChecked);
         }}
       />
-      <p style={isChecked ? { textDecoration: 'line-through' } : {}}>{name}</p>
+      <label
+        forHTML=""
+        style={isChecked ? { textDecoration: 'line-through' } : {}}
+      >
+        {name}
+      </label>
       <button
         type="button"
         className="btn remove-btn"
